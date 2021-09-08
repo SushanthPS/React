@@ -1,6 +1,10 @@
 import { useState } from "react";
 import "./App.css";
 import Form from "./components/Form";
+import Counter from "./components/Counter";
+import { Todos } from "./components/Todos";
+
+const option = 2;
 
 function App() {
     const [loading, setLoading] = useState(true);
@@ -25,10 +29,22 @@ function App() {
     }
     if (error) {
         return <div>Something went wrong</div>;
-    } else {
+    } else if (option === 1) {
         return (
             <div className="App">
                 <Form></Form>
+            </div>
+        );
+    } else if (option === 2) {
+        return (
+            <div className="App">
+                <Counter></Counter>
+            </div>
+        );
+    } else if (option === 3) {
+        return (
+            <div className="App">
+                <Todos></Todos>
             </div>
         );
     }
