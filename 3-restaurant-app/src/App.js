@@ -1,8 +1,7 @@
 import "./App.css";
 import Payment from "./components/Payment";
 
-const option = 2;
-
+const option = 1;
 const el1 = {
     date: "28/10/2020",
     h1: "Amazon Gift",

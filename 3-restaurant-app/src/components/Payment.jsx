@@ -1,5 +1,4 @@
 export default function Payment({ date, h1, h2, text, logo, color }) {
-    console.log(color);
     return (
         <div className="row-flex" style={{ backgroundColor: color }}>
             <div className="column-flex">
