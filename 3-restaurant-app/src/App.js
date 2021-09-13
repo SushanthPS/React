@@ -1,25 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import Payment from "./components/Payment";
+
+const option = 2;
+
+const el1 = {
+    date: "28/10/2020",
+    h1: "Amazon Gift",
+    h2: "Pay",
+    text: "Desktop - Mobile",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/4/4a/Amazon_icon.svg",
+    color: "#FFA500",
+};
+const el2 = {
+    date: "17 Sep 2020",
+    h1: "Apple Gift",
+    h2: "Payment",
+    text: "MacOS - Mobile",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg",
+    color: "#F5F5F5",
+};
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    if (option === 1) return <div className="App"></div>;
+    else if (option === 2)
+        return (
+            <div className="App">
+                <Payment {...el1}></Payment>
+                <Payment {...el2}></Payment>
+            </div>
+        );
 }
 
 export default App;

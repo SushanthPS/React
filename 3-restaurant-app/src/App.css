@@ -1,38 +1,53 @@
 .App {
-  text-align: center;
+    text-align: center;
+    margin-top: 20px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.row-flex {
+    display: flex;
+    width: 60%;
+    margin: auto;
+    height: 300px;
+    justify-content: space-between;
+    margin-bottom: 30px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.column-flex {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    text-align: left;
+    padding: 5px 20px 5px 20px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.column-flex:nth-of-type(2) {
+    align-items: flex-end;
+    justify-content: space-between;
 }
 
-.App-link {
-  color: #61dafb;
+.paymentImage {
+    max-width: 20%;
+    justify-content: flex-end;
+    margin: 10px 10px 0px 0px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.black-box {
+    color: white;
+    background-color: black;
+    width: 90px;
+    padding: 5px;
+    text-align: center;
 }
+
+.paymentText {
+    font-weight: 600;
+}
+
+.arrow {
+    font-size: 50px;
+    margin-right: 10px;
+}
+
+/* ======================================================= */
+/* ======================================================= */
+/* ======================================================= */
