@@ -61,7 +61,7 @@ button:hover {
     margin-top: 10px;
 }
 
-button {
+.buttonC {
     width: 30px;
     height: 30px;
     border: none;

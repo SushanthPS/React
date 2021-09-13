@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { v4 as uuid } from "uuid";
+import TodoList from "./TodoList";
 
 export default function Todo() {
     const [text, setText] = useState("");
@@ -31,27 +32,16 @@ export default function Todo() {
                     onChange={handleChange}
                     value={text}
                 />
-                <button className="addButton" onClick={addTodo}>
+                <button className="addButton buttonC" onClick={addTodo}>
                     +
                 </button>
             </div>
 
             <div className="flex-column">
-                {todoList.map((ele) => (
-                    <div key={uuid()} className="flex-row margin-top">
-                        <div className="listItem flex-row">
-                            {ele.title}{" "}
-                            {ele.status ? (
-                                <span className="check"></span>
-                            ) : (
-                                <span>❌</span>
-                            )}
-                        </div>
-                        <button onClick={() => toggleStatus(ele)}>
-                            &#10003;
-                        </button>
-                    </div>
-                ))}
+                <TodoList
+                    todoList={todoList}
+                    toggleStatus={toggleStatus}
+                ></TodoList>
             </div>
         </div>
     );
