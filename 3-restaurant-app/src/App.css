@@ -3,6 +3,10 @@
     margin-top: 20px;
 }
 
+body {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
 .row-flex {
     display: flex;
     width: 60%;
@@ -51,3 +55,98 @@
 /* ======================================================= */
 /* ======================================================= */
 /* ======================================================= */
+
+.rflex {
+    display: flex;
+}
+
+.cflex {
+    display: flex;
+    flex-direction: column;
+}
+
+.card-details > h1 {
+    color: #b93b3c;
+}
+
+.card-details > p:nth-of-type(1),
+.card-details > p:nth-of-type(2),
+.card-rating > p {
+    color: #a3abb2;
+}
+
+.card {
+    font-weight: 600;
+    width: 200px;
+    height: 150px;
+    border: 2px solid black;
+}
+
+.card-part-1 > div {
+    background: #eef0f5;
+    width: 110px;
+    height: 130px;
+    position: relative;
+}
+
+.card-part-1 > div > img {
+    max-width: 100%;
+}
+
+.card {
+    width: 450px;
+    height: 205px;
+}
+
+.card-rating > div {
+    border-radius: 2px;
+    color: white;
+    width: 16px;
+    height: 9px;
+    font-size: 9px;
+    padding: 0px 2px 5px 2px;
+    font-weight: 700;
+}
+
+.fs8 {
+    font-size: 8px;
+    font-weight: 700;
+}
+
+.card-part-1 > div {
+    border: 1px solid red;
+}
+
+.card-details {
+    text-align: left;
+}
+
+.card-details > h1 {
+    font-size: 14px;
+    font-weight: 800;
+    margin-bottom: -6px;
+}
+
+.card-details > p {
+    font-size: 8px;
+    font-weight: 600;
+    margin-bottom: -6px;
+}
+
+.order-online {
+    color: #4d9643;
+    background-color: #e9f4ec;
+    width: 75px;
+    height: 23px;
+    font-size: 10px;
+    align-items: center;
+    padding: 0px 5px 0px 10px;
+}
+
+.order-online > p {
+    margin-right: 5px;
+}
+
+.card-part-2 {
+    justify-content: end;
+}
