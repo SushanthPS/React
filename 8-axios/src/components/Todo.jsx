@@ -1,81 +1,58 @@
 import { useEffect, useState } from "react";
+import axios from "axios";
 
 export default function Todo() {
     const [text, setText] = useState("");
     const [todoList, setTodoList] = useState([]);
-    const [loading, setLoading] = useState(true);
     const [page, setPage] = useState(1);
-    const [error, setIsError] = useState(false);
-    const [lastpage, setLastpage] = useState(100);
-    const limit = 2;
+    let [items, setItems] = useState(0);
+    const limit = 3;
 
-    const handleTodo = (data) => {
-        fetch("http://localhost:3001/todos", {
-            method: "POST",
-            body: JSON.stringify(data),
-            headers: {
-                "Content-Type": "application/json",
+    //============================================================
+
+    const getTodos = async (page) => {
+        const res = await axios.get(`http://localhost:3001/todos`, {
+            params: {
+                _page: page,
+                _limit: limit,
             },
-        }).then(() => {
-            getTodos();
-            setText("");
         });
+        setTodoList(res.data);
+        setItems(res.headers["x-total-count"]);
     };
 
-    const getTodos = (page) => {
-        fetch(`http://localhost:3001/todos?_page=${page}&_limit=${limit}`)
-            .then((data) => data.json())
-            .then((data) => {
-                setTodoList(data);
-                setLoading(false);
-            })
-            .catch((err) => {
-                setIsError(true);
-            });
+    //============================================================
+
+    const postTodo = async (data) => {
+        await axios.post("http://localhost:3001/todos", data);
+        getTodos();
+        setText("");
     };
 
-    const toggleStatus = (ele) => {
+    //============================================================
+
+    const toggleStatus = async (ele) => {
         ele.status = !ele.status;
-        fetch(`http://localhost:3001/todos/${ele.id}`, {
-            method: "PUT",
-            body: JSON.stringify(ele),
-            headers: {
-                "Content-Type": "application/json",
-            },
-        }).then(() => {
-            getTodos(page);
-        });
+        await axios.put(`http://localhost:3001/todos/${ele.id}`, ele);
+        getTodos(page);
     };
 
-    const handleDelete = (ele) => {
-        fetch(`http://localhost:3001/todos/${ele.id}`, {
-            method: "DELETE",
-            headers: {
-                "Content-Type": "application/json",
-            },
-        }).then(() => {
-            getTodos(page);
-        });
+    //============================================================
+
+    const handleDelete = async (ele) => {
+        await axios.delete(`http://localhost:3001/todos/${ele.id}`);
+        getTodos(page);
     };
+
+    //============================================================
 
     useEffect(() => {
         getTodos(page);
-
-        //getting last page
-        fetch(`http://localhost:3001/todos`)
-            .then((data) => data.json())
-            .then((data) => {
-                let count = data.length;
-                setLastpage(Math.ceil(count / limit));
-            });
-        //end of getting last page
     }, [page]);
 
-    return loading ? (
-        "Loading..."
-    ) : error ? (
-        "Error Loading files"
-    ) : (
+    //============================================================
+
+    return (
         <>
             <div className="page">Page Number: {page}</div>
             <div className="input">
@@ -88,7 +65,7 @@ export default function Todo() {
                     }}
                 />
                 <button
-                    onClick={() => handleTodo({ title: text, status: false })}
+                    onClick={() => postTodo({ title: text, status: false })}
                 >
                     Add todo
                 </button>
@@ -130,7 +107,7 @@ export default function Todo() {
                         Prev Page
                     </button>
                     <button
-                        disabled={page === lastpage + 1}
+                        disabled={page === Math.ceil(items / limit)}
                         onClick={() => {
                             setPage(page + 1);
                         }}
