@@ -1,6 +1,7 @@
 import "./App.css";
 import Payment from "./components/Payment";
-import RestaurantDetails from "./components/RestaurantDetails";
+import Restaurant from "./components/Restaurant";
+import Navbar from "./components/Navbar";
 
 const option = 1;
 const el1 = {
@@ -20,25 +21,11 @@ const el2 = {
     color: "#F5F5F5",
 };
 
-const temp = {
-    id: 1,
-    restaurantName: "Morissette and Sons",
-    image: "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/ggolade30mtewrqkvfkj",
-    cost_for_one: 806,
-    cost_for_two: 1829,
-    min: 134,
-    reviews: 813,
-    votes: 803,
-    rating: 2.7,
-    categories: ["Continental", "Indian", "Multi-Cusine"],
-    payment: ["card", "cash"],
-};
-
 function App() {
     if (option === 1)
         return (
-            <div className="App">
-                <RestaurantDetails obj={temp}></RestaurantDetails>
+            <div>
+                <Restaurant></Restaurant>
             </div>
         );
     else if (option === 2)

@@ -9,24 +9,35 @@ export default function RestaurantDetails({ obj }) {
     return (
         <div className="card cflex">
             <div className="card-part-1 rflex">
-                <div>{/* <img src={obj.image} alt="" /> */}</div>
-                <div className="card-details">
-                    <h1>{obj.restaurantName}</h1>
-                    <p>{obj.categories.join(", ")}</p>
-                    <p>Cost &#8377;{obj.cost_for_one} for one</p>
-                    <p>Min &#8377;{obj.min}</p>
-                    <p>Accepts {obj.payment.join(", ")} payments</p>
+                <div className="card-image">
+                    <img src={obj.image} alt="" />
                 </div>
-                <div className="card-rating">
+                <div className="card-details">
+                    <div>
+                        <h3>{obj.restaurantName}</h3>
+                        <div>
+                            <span className="gray">
+                                {obj.categories.join(", ")}
+                            </span>{" "}
+                            <br />
+                            <span className="gray">
+                                Cost &#8377;{obj.cost_for_one} for one
+                            </span>{" "}
+                            <br />
+                            <span>Min &#8377;{obj.min}</span> <br />
+                            <span>Accepts {obj.payment.join(", ")}</span>
+                        </div>
+                    </div>
+                </div>
+                <div className="card-rating cflex">
                     <div style={{ backgroundColor: color }}>{obj.rating}</div>
-                    <p className="fs8">{obj.votes} votes</p>
-                    <p className="fs8">{obj.reviews} reviews</p>
+                    <span className="fs12">{obj.votes} votes</span>
+                    <span className="fs12">{obj.reviews} reviews</span>
                 </div>
             </div>
             <div className="card-part-2 rflex">
                 <div className="order-online rflex">
-                    <p>Order Online</p>
-                    <p>&#707;</p>
+                    <span>Order Online &#707;</span>
                 </div>
             </div>
         </div>

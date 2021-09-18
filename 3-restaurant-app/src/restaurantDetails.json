@@ -10,7 +10,7 @@
         "votes": 803,
         "rating": 2.7,
         "categories": ["Continental", "Indian", "Multi-Cusine"],
-        "payment": ["card", "cash"]
+        "payment": ["Card", "Cash"]
     },
     {
         "id": 2,
@@ -23,20 +23,20 @@
         "votes": 65,
         "rating": 2.4,
         "categories": ["Indian"],
-        "payment": ["cash", "upi"]
+        "payment": ["Cash", "UPI"]
     },
     {
         "id": 3,
-        "restaurantName": "Sporer, Metz and Lind",
+        "restaurantName": "Sporer and Lind",
         "image": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/pwfpvrhv5djc8nas0vej",
         "cost_for_one": 646,
         "cost_for_two": 1915,
         "min": 169,
         "reviews": 603,
         "votes": 999,
-        "rating": 3.5,
+        "rating": 4.5,
         "categories": ["Multi-Cusine"],
-        "payment": ["card", "cash", "upi"]
+        "payment": ["Card", "Cash", "UPI"]
     },
     {
         "id": 4,
@@ -49,11 +49,11 @@
         "votes": 393,
         "rating": 3.4,
         "categories": ["Multi-Cusine"],
-        "payment": ["card", "cash", "upi"]
+        "payment": ["Card", "Cash", "UPI"]
     },
     {
         "id": 5,
-        "restaurantName": "Morissette, Labadie and Herman",
+        "restaurantName": "Morissette",
         "image": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/pp2vbjq8zpl3g6vnkeli",
         "cost_for_one": 973,
         "cost_for_two": 1908,
@@ -62,12 +62,12 @@
         "votes": 98,
         "rating": 2.7,
         "categories": ["Continental", "Indian"],
-        "payment": ["card", "cash", "upi"]
+        "payment": ["Card", "Cash", "UPI"]
     },
     {
         "id": 6,
         "restaurantName": "O'Conner LLC",
-        "image": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/pp2vbjq8zpl3g6vnkeli",
+        "image": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/pwgkaigd5pvkfo3kwdkj",
         "cost_for_one": 556,
         "cost_for_two": 1651,
         "min": 178,
@@ -75,12 +75,12 @@
         "votes": 391,
         "rating": 3.5,
         "categories": ["Indian", "Multi-Cusine"],
-        "payment": ["card", "upi"]
+        "payment": ["Card", "UPI"]
     },
     {
         "id": 7,
         "restaurantName": "Morissette-Nader",
-        "image": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/pp2vbjq8zpl3g6vnkeli",
+        "image": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/xbpcojpf5eaihsxemdop",
         "cost_for_one": 674,
         "cost_for_two": 1634,
         "min": 78,
@@ -88,25 +88,25 @@
         "votes": 410,
         "rating": 4.8,
         "categories": ["Indian", "Multi-Cusine"],
-        "payment": ["card", "cash", "upi"]
+        "payment": ["Card", "Cash", "UPI"]
     },
     {
-        "id": 9,
+        "id": 8,
         "restaurantName": "Schaefer-Daniel",
-        "image": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/pp2vbjq8zpl3g6vnkeli",
+        "image": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/pbc00kd98mldnsol7m6r",
         "cost_for_one": 469,
         "cost_for_two": 1851,
         "min": 117,
         "reviews": 84,
         "votes": 557,
-        "rating": 2.0,
+        "rating": 4.0,
         "categories": ["Continental", "Indian", "Multi-Cusine"],
-        "payment": ["card", "cash", "upi"]
+        "payment": ["Card", "Cash", "UPI"]
     },
     {
-        "id": 10,
+        "id": 9,
         "restaurantName": "Grant-Dare",
-        "image": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/pp2vbjq8zpl3g6vnkeli",
+        "image": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/qoxx9wwkkhzwrdvnt28p",
         "cost_for_one": 698,
         "cost_for_two": 1116,
         "min": 103,
@@ -114,12 +114,12 @@
         "votes": 510,
         "rating": 4.8,
         "categories": ["Indian", "Multi-Cusine"],
-        "payment": ["card", "upi"]
+        "payment": ["Card", "UPI"]
     },
     {
-        "id": 11,
+        "id": 10,
         "restaurantName": "Rogahn-Roob",
-        "image": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/pp2vbjq8zpl3g6vnkeli",
+        "image": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/euhxwjuj8v1maxnv2jty",
         "cost_for_one": 806,
         "cost_for_two": 1186,
         "min": 141,
@@ -127,12 +127,12 @@
         "votes": 847,
         "rating": 1.1,
         "categories": ["Continental", "Indian", "Multi-Cusine"],
-        "payment": ["card", "upi"]
+        "payment": ["Card", "UPI"]
     },
     {
-        "id": 12,
+        "id": 11,
         "restaurantName": "Botsford Group",
-        "image": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/pp2vbjq8zpl3g6vnkeli",
+        "image": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/hpvifptiufwr5ntqc4x1",
         "cost_for_one": 436,
         "cost_for_two": 842,
         "min": 77,
@@ -140,64 +140,64 @@
         "votes": 56,
         "rating": 3.3,
         "categories": ["Indian", "Multi-Cusine"],
-        "payment": ["card", "upi"]
+        "payment": ["Card", "UPI"]
     },
     {
-        "id": 13,
-        "restaurantName": "Miller, Romaguera and Emmerich",
-        "image": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/pp2vbjq8zpl3g6vnkeli",
+        "id": 12,
+        "restaurantName": "Miller and Emmerich",
+        "image": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/ytfkceuookjilzqrw1u5",
         "cost_for_one": 923,
         "cost_for_two": 1328,
         "min": 163,
         "reviews": 320,
         "votes": 467,
         "rating": 1.8,
-        "categories": ["Continental", "Indian", "Multi-Cusine", "Desserts"],
-        "payment": ["card", "cash", "upi"]
+        "categories": ["Indian", "Multi-Cusine"],
+        "payment": ["Card", "Cash", "UPI"]
     },
     {
-        "id": 14,
-        "restaurantName": "Hagenes, Howe and Heaney",
-        "image": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/pp2vbjq8zpl3g6vnkeli",
+        "id": 13,
+        "restaurantName": "Hagenes",
+        "image": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/er508k1ubej8ptcbzzhv",
         "cost_for_one": 481,
         "cost_for_two": 1675,
         "min": 79,
         "reviews": 602,
         "votes": 382,
-        "rating": 2.5,
-        "categories": ["Continental", "Indian", "Multi-Cusine", "Asian"],
-        "payment": ["cash", "upi"]
+        "rating": 4.5,
+        "categories": ["Multi-Cusine", "Asian"],
+        "payment": ["Cash", "UPI"]
     },
     {
         "id": 14,
         "restaurantName": "Bernhard-Hermiston",
-        "image": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/pp2vbjq8zpl3g6vnkeli",
+        "image": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/yiqvcv718dkrjciz14bc",
         "cost_for_one": 892,
         "cost_for_two": 606,
         "min": 69,
         "reviews": 839,
         "votes": 870,
         "rating": 1.2,
-        "categories": ["Continental", "Indian", "Multi-Cusine", "Pizza"],
-        "payment": ["card", "cash", "upi"]
+        "categories": ["Indian", "Multi-Cusine", "Pizza"],
+        "payment": ["Card", "Cash", "UPI"]
     },
     {
         "id": 15,
         "restaurantName": "Wisoky Inc",
-        "image": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/pp2vbjq8zpl3g6vnkeli",
+        "image": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/t6cs3pliwwmdza720mzs",
         "cost_for_one": 971,
         "cost_for_two": 1203,
         "min": 129,
         "reviews": 887,
         "votes": 97,
         "rating": 4.2,
-        "categories": ["Continental", "Indian", "Multi-Cusine", "Asian"],
-        "payment": ["card", "cash"]
+        "categories": ["Continental", "Asian"],
+        "payment": ["Card", "Cash"]
     },
     {
         "id": 16,
         "restaurantName": "Waelchi Group",
-        "image": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/pp2vbjq8zpl3g6vnkeli",
+        "image": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/ge0xumvommatijxzcegf",
         "cost_for_one": 730,
         "cost_for_two": 1912,
         "min": 53,
@@ -205,12 +205,12 @@
         "votes": 54,
         "rating": 1.4,
         "categories": ["Continental"],
-        "payment": ["card", "cash", "upi"]
+        "payment": ["Card", "Cash", "UPI"]
     },
     {
         "id": 17,
         "restaurantName": "Zieme-O'Reilly",
-        "image": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/pp2vbjq8zpl3g6vnkeli",
+        "image": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/m2sk7o4dtuenfucqztqk",
         "cost_for_one": 516,
         "cost_for_two": 889,
         "min": 71,
@@ -218,12 +218,12 @@
         "votes": 93,
         "rating": 2.6,
         "categories": ["Indian"],
-        "payment": ["card", "cash", "upi"]
+        "payment": ["Card", "Cash", "UPI"]
     },
     {
         "id": 18,
         "restaurantName": "Beer-Stanton",
-        "image": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/pp2vbjq8zpl3g6vnkeli",
+        "image": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/w7s5kscoqorteut27jlr",
         "cost_for_one": 673,
         "cost_for_two": 1064,
         "min": 152,
@@ -231,12 +231,12 @@
         "votes": 243,
         "rating": 3.0,
         "categories": ["Continental", "Indian", "japaneese"],
-        "payment": ["card", "cash"]
+        "payment": ["Card", "Cash"]
     },
     {
         "id": 19,
         "restaurantName": "Jerde-Harris",
-        "image": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/pp2vbjq8zpl3g6vnkeli",
+        "image": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/adlmiwl5w8l13oslahtq",
         "cost_for_one": 423,
         "cost_for_two": 1464,
         "min": 76,
@@ -244,19 +244,19 @@
         "votes": 906,
         "rating": 4.3,
         "categories": ["Multi-Cusine", "Spanish"],
-        "payment": ["card", "cash", "upi"]
+        "payment": ["Card", "Cash", "UPI"]
     },
     {
         "id": 20,
-        "restaurantName": "Quitzon, Bogan and Cummerata",
-        "image": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/pp2vbjq8zpl3g6vnkeli",
+        "restaurantName": "Quitzon",
+        "image": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/ypgiiexncm8jfzfkrytj",
         "cost_for_one": 955,
         "cost_for_two": 1965,
         "min": 60,
         "reviews": 531,
         "votes": 794,
         "rating": 2.6,
-        "categories": ["Continental", "Indian", "Multi-Cusine", "South-Indian"],
-        "payment": ["cash", "upi"]
+        "categories": ["Multi-Cusine", "South-Indian"],
+        "payment": ["Cash", "UPI"]
     }
 ]
