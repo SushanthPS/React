@@ -1,124 +1,114 @@
 {
-    "users": [
-        {
-            "name": "Shadow",
-            "age": 23,
-            "address": "abc cross, xyz main",
-            "salary": 60000,
-            "image": "https://randomuser.me/api/portraits/men/9.jpg",
-            "department": "ec",
-            "isMarried": false,
-            "id": 1
-        },
-        {
-            "name": "Blaze",
-            "age": 34,
-            "address": "qwe cross, ppp main",
-            "salary": 80000,
-            "image": "https://randomuser.me/api/portraits/men/47.jpg",
-            "department": "mech",
-            "isMarried": false,
-            "id": 2
-        },
-        {
-            "name": "Shawn",
-            "age": 24,
-            "address": "ppp cross, laz main",
-            "image": "https://randomuser.me/api/portraits/men/44.jpg",
-            "department": "ec",
-            "isMarried": true,
-            "salary": 30000,
-            "id": 3
-        },
-        {
-            "name": "Naruto",
-            "age": 20,
-            "address": "qwe cross, ppp main",
-            "salary": 800000,
-            "image": "https://randomuser.me/api/portraits/men/73.jpg",
-            "department": "cs",
-            "isMarried": false,
-            "id": 4
-        },
-        {
-            "name": "Ace",
-            "age": 20,
-            "address": "qwe cross, ppp main",
-            "salary": 987000,
-            "image": "https://randomuser.me/api/portraits/men/27.jpg",
-            "department": "cs",
-            "isMarried": true,
-            "id": 5
-        },
-        {
-            "name": "Babloo",
-            "age": 21,
-            "address": "qwe cross, ppp main",
-            "salary": 111000,
-            "image": "https://randomuser.me/api/portraits/men/28.jpg",
-            "department": "mech",
-            "isMarried": true,
-            "id": 6
-        },
-        {
-            "name": "Luffy",
-            "age": 26,
-            "address": "qwe cross, ppp main",
-            "salary": 11000,
-            "image": "https://randomuser.me/api/portraits/men/30.jpg",
-            "department": "mech",
-            "isMarried": true,
-            "id": 7
-        },
-        {
-            "name": "Nami",
-            "age": 24,
-            "address": "qwe cross, ppp main",
-            "salary": 99000,
-            "image": "https://randomuser.me/api/portraits/men/34.jpg",
-            "department": "ec",
-            "isMarried": false,
-            "id": 8
-        },
-        {
-            "name": "Zoro",
-            "age": 31,
-            "address": "qwe cross, ppp main",
-            "salary": 5000,
-            "image": "https://randomuser.me/api/portraits/men/38.jpg",
-            "department": "cs",
-            "isMarried": true,
-            "id": 9
-        },
-        {
-            "name": "Sanji",
-            "age": 38,
-            "address": "qwe cross, ppp main",
-            "salary": 10000,
-            "image": "https://randomuser.me/api/portraits/men/45.jpg",
-            "department": "ec",
-            "isMarried": false,
-            "id": 10
-        },
-        {
-            "name": "Yamato",
-            "age": 28,
-            "address": "qwe cross, ppp main",
-            "salary": 88000,
-            "image": "https://randomuser.me/api/portraits/men/43.jpg",
-            "department": "mech",
-            "isMarried": false,
-            "id": 11
-        },
-        {
-            "name": "Minato",
-            "age": 34,
-            "address": "qwe cross, ppp main",
-            "salary": 122000,
-            "image": "https://randomuser.me/api/portraits/men/11.jpg",
-            "department": "cs",
-            "isMarried": true,
-            "id": 12
-        }
-    ]
+  "users": [
+    {
+      "name": "Shadow",
+      "age": 23,
+      "address": "abc cross, xyz main",
+      "salary": 60000,
+      "image": "https://randomuser.me/api/portraits/men/9.jpg",
+      "department": "ec",
+      "isMarried": false,
+      "id": 1
+    },
+    {
+      "name": "Blaze",
+      "age": 34,
+      "address": "qwe cross, ppp main",
+      "salary": 80000,
+      "image": "https://randomuser.me/api/portraits/men/47.jpg",
+      "department": "mech",
+      "isMarried": false,
+      "id": 2
+    },
+    {
+      "name": "Shawn",
+      "age": 24,
+      "address": "ppp cross, laz main",
+      "image": "https://randomuser.me/api/portraits/men/44.jpg",
+      "department": "ec",
+      "isMarried": true,
+      "salary": 30000,
+      "id": 3
+    },
+    {
+      "name": "Naruto",
+      "age": 20,
+      "address": "qwe cross, ppp main",
+      "salary": 800000,
+      "image": "https://randomuser.me/api/portraits/men/73.jpg",
+      "department": "cs",
+      "isMarried": false,
+      "id": 4
+    },
+    {
+      "name": "Ace",
+      "age": 20,
+      "address": "qwe cross, ppp main",
+      "salary": 987000,
+      "image": "https://randomuser.me/api/portraits/men/27.jpg",
+      "department": "cs",
+      "isMarried": true,
+      "id": 5
+    },
+    {
+      "name": "Babloo",
+      "age": 21,
+      "address": "qwe cross, ppp main",
+      "salary": 111000,
+      "image": "https://randomuser.me/api/portraits/men/28.jpg",
+      "department": "mech",
+      "isMarried": true,
+      "id": 6
+    },
+    {
+      "name": "Luffy",
+      "age": 26,
+      "address": "qwe cross, ppp main",
+      "salary": 11000,
+      "image": "https://randomuser.me/api/portraits/men/30.jpg",
+      "department": "mech",
+      "isMarried": true,
+      "id": 7
+    },
+    {
+      "name": "Zoro",
+      "age": 31,
+      "address": "qwe cross, ppp main",
+      "salary": 5000,
+      "image": "https://randomuser.me/api/portraits/men/38.jpg",
+      "department": "cs",
+      "isMarried": true,
+      "id": 9
+    },
+    {
+      "name": "Sanji",
+      "age": 38,
+      "address": "qwe cross, ppp main",
+      "salary": 10000,
+      "image": "https://randomuser.me/api/portraits/men/45.jpg",
+      "department": "ec",
+      "isMarried": false,
+      "id": 10
+    },
+    {
+      "name": "abc",
+      "age": "11",
+      "address": "abc cdf",
+      "salary": "1000000",
+      "image": "https://randomuser.me/api/portraits/women/60.jpg",
+      "department": "cs",
+      "isMarried": false,
+      "id": 13
+    },
+    {
+      "name": "abc",
+      "age": "12",
+      "address": "ewqeqw",
+      "salary": "120000",
+      "image": "https://randomuser.me/api/portraits/women/91.jpg",
+      "department": "mech",
+      "isMarried": true,
+      "id": 14
+    }
+  ]
 }
