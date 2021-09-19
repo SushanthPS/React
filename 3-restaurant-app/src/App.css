@@ -170,7 +170,11 @@ body {
     grid-template-columns: auto auto auto;
     gap: 10px;
     justify-content: space-evenly;
-    position: static;
+    margin-top: 50px;
+}
+
+.grid > div {
+    margin-bottom: 20px;
 }
 
 /* ======================================================= */
@@ -185,10 +189,6 @@ body {
     top: 0;
 }
 
-.main-body {
-    margin-top: 100px;
-}
-
 .navbar img {
     width: 10%;
     margin-left: 40px;
@@ -198,6 +198,7 @@ body {
 .navbar button {
     color: white;
     background-color: #fc8112;
+    font-weight: 700;
     border: none;
     border-radius: 20px;
     font-size: 16px;
@@ -206,4 +207,90 @@ body {
     justify-content: flex-end;
     cursor: pointer;
     margin-left: 400px;
+}
+
+.form {
+    position: fixed;
+    background: white;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 3px 8px;
+    top: -10px;
+    padding: 40px;
+    margin-top: 100px;
+    left: 35%;
+}
+
+.form input {
+    padding: 8px;
+    border: none;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px,
+        rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+    outline: none;
+}
+
+.form label {
+    font-weight: 600;
+    font-size: 13px;
+}
+
+.submit {
+    color: white;
+    background-color: #fc8112;
+    font-weight: 700;
+    border: none;
+    border-radius: 20px;
+    font-size: 16px;
+    margin-left: 170px;
+    width: 130px;
+}
+
+.submit:hover {
+    background: #e26900;
+}
+
+.form > form > div > div {
+    margin: 15px;
+}
+
+.form > form > div > div > div {
+    margin: 15px;
+}
+
+.form > form > div > div:nth-of-type(2) > div:nth-of-type(5) {
+    margin-top: 25px;
+}
+
+/* ======================================================= */
+/* ======================================================= */
+/* =======================OPTIONS====================== */
+
+.options {
+    margin-top: 90px;
+    text-align: center;
+}
+
+select {
+    padding: 5px 15px 5px 15px;
+    font-size: 15px;
+    margin: 0px 10px 0px 10px;
+}
+
+.options > form > div {
+    display: inline-flex;
+}
+
+.options > form > div > label {
+    display: flex;
+    flex-direction: column;
+    margin: 0px 20px 0px 20px;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.options > form > div > label > select {
+    margin-top: 5px;
+    border: none;
+    font-size: 13px;
+    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px,
+        rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+    outline: none;
 }

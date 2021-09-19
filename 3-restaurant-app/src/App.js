@@ -1,7 +1,6 @@
 import "./App.css";
 import Payment from "./components/Payment";
 import Restaurant from "./components/Restaurant";
-import Navbar from "./components/Navbar";
 
 const option = 1;
 const el1 = {

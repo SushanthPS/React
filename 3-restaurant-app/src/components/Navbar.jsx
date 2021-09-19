@@ -1,10 +1,10 @@
 import { useState } from "react";
 import Form from "./Form";
 
-export default function Navbar() {
+export default function Navbar({ data, setData }) {
     const [form, setForm] = useState(false);
     return (
-        <div className="navbar-cover">
+        <>
             <div className="navbar rflex">
                 <div>
                     <img
@@ -13,12 +13,17 @@ export default function Navbar() {
                     />
                 </div>
                 <div>
-                    <button onClick={() => setForm(true)}>
-                        Add Restaurant
+                    <button onClick={() => setForm(!form)}>
+                        {form ? "Close Form" : "Add Restaurant"}
                     </button>
                 </div>
             </div>
-            <Form form={form}></Form>
-        </div>
+            <Form
+                form={form}
+                setForm={setForm}
+                arr={data}
+                setArr={setData}
+            ></Form>
+        </>
     );
 }

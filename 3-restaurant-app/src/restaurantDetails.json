@@ -257,6 +257,6 @@
         "votes": 794,
         "rating": 2.6,
         "categories": ["Multi-Cusine", "South-Indian"],
-        "payment": ["Cash", "UPI"]
+        "payment": ["Cash", "Card"]
     }
 ]
