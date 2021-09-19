@@ -1,11 +1,14 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
+import TodoItem from "./TodoItem";
 
 export default function Todo() {
     const [text, setText] = useState("");
     const [todoList, setTodoList] = useState([]);
+    const [todoList2, setTodoList2] = useState([]);
     const [page, setPage] = useState(1);
     let [items, setItems] = useState(0);
+    const [button, setButton] = useState(false);
     const limit = 3;
 
     //============================================================
@@ -15,10 +18,20 @@ export default function Todo() {
             params: {
                 _page: page,
                 _limit: limit,
+                status: false,
             },
         });
         setTodoList(res.data);
         setItems(res.headers["x-total-count"]);
+    };
+
+    const getTodos2 = async () => {
+        const res = await axios.get(`http://localhost:3001/todos`, {
+            params: {
+                status: true,
+            },
+        });
+        setTodoList2(res.data);
     };
 
     //============================================================
@@ -35,6 +48,7 @@ export default function Todo() {
         ele.status = !ele.status;
         await axios.put(`http://localhost:3001/todos/${ele.id}`, ele);
         getTodos(page);
+        getTodos2();
     };
 
     //============================================================
@@ -42,12 +56,14 @@ export default function Todo() {
     const handleDelete = async (ele) => {
         await axios.delete(`http://localhost:3001/todos/${ele.id}`);
         getTodos(page);
+        getTodos2();
     };
 
     //============================================================
 
     useEffect(() => {
         getTodos(page);
+        getTodos2();
     }, [page]);
 
     //============================================================
@@ -73,28 +89,11 @@ export default function Todo() {
 
             <div className="main-list">
                 {todoList.map((el) => (
-                    <div className="items" key={el.id}>
-                        {el.title} -{" "}
-                        {el.status ? (
-                            <span className="check"></span>
-                        ) : (
-                            <span>❌</span>
-                        )}
-                        <button
-                            onClick={() => toggleStatus(el)}
-                            className="toggleButtons"
-                        >
-                            Toggle
-                        </button>
-                        <button
-                            className="toggleButtons"
-                            onClick={() => {
-                                handleDelete(el);
-                            }}
-                        >
-                            Delete
-                        </button>
-                    </div>
+                    <TodoItem
+                        el={el}
+                        toggleStatus={toggleStatus}
+                        handleDelete={handleDelete}
+                    ></TodoItem>
                 ))}
 
                 <div className="page-buttons">
@@ -115,6 +114,22 @@ export default function Todo() {
                         Next Page
                     </button>
                 </div>
+                <div>
+                    <button onClick={() => setButton(!button)}>
+                        {button
+                            ? "Hide Completed Todos"
+                            : "Show Completed Todos"}
+                    </button>
+                </div>
+                {button
+                    ? todoList2.map((el) => (
+                          <TodoItem
+                              el={el}
+                              toggleStatus={toggleStatus}
+                              handleDelete={handleDelete}
+                          ></TodoItem>
+                      ))
+                    : null}
             </div>
         </>
     );

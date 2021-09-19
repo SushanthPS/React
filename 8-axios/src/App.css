@@ -46,7 +46,7 @@ button {
     width: var(--width);
     border-bottom: var(--borderWidth) solid var(--borderColor);
     border-right: var(--borderWidth) solid var(--borderColor);
-    margin: 2px 7px 0px 0px;
+    margin: 2px 7px 0px 15px;
 }
 
 :root {
@@ -107,4 +107,8 @@ h1 {
 
 body {
     margin-bottom: 20px;
+}
+
+.spacing {
+    margin-left: 10px;
 }
