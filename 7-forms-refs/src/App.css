@@ -1,3 +1,52 @@
 .App {
     text-align: center;
 }
+
+.cflex {
+    display: flex;
+    flex-direction: column;
+}
+
+.rflex {
+    display: flex;
+}
+
+.form > input,
+.form > select {
+    margin: 5px;
+    padding: 5px 15px 5px 15px;
+}
+
+.form > select {
+    padding-left: 56px;
+    padding-right: 56px;
+    text-align-last: left;
+}
+
+.formButton {
+    color: white;
+    background-color: black;
+    border: none;
+    width: 100px;
+    height: 30px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+table {
+    margin: 40px auto;
+    border-collapse: collapse;
+}
+
+th {
+    background-color: black;
+    padding: 5px;
+    width: 120px;
+    color: white;
+}
+
+td {
+    border: 1px solid black;
+    font-size: 17px;
+}

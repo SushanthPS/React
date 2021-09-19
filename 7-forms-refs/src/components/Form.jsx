@@ -1,12 +1,15 @@
-import { useRef, useState } from "react";
+import { useEffect, useState } from "react";
+import Input from "./Input";
+import axios from "axios";
+import Table from "./Table";
 
-const initState = {
-    username: "",
-    age: "",
-};
 export default function Form() {
-    const [formData, setFormData] = useState(initState);
-    const uploadRef = useRef();
+    const [showForm, setShowForm] = useState(false);
+    const [formData, setFormData] = useState({});
+    const [page, setPage] = useState(1);
+    const [users, setUsers] = useState([]);
+    const [sort, setSort] = useState(null);
+    const [filter, setFilter] = useState(null);
 
     const handleChange = (e) => {
         const { name, value, type, checked } = e.target;
@@ -16,45 +19,117 @@ export default function Form() {
         });
     };
 
-    const handleSubmit = (e) => {
+    const postData = async (e) => {
         e.preventDefault();
-        console.log(formData);
+        await axios.post("http://localhost:3001/users", formData);
+        getData(page);
     };
 
+    const getData = async (page) => {
+        const res = await axios.get("http://localhost:3001/users", {
+            params: {
+                _page: page,
+                _limit: 5,
+                _sort: sort === null ? "id" : "salary",
+                _order: sort === "highToLow" ? "desc" : "asc",
+                department: filter,
+            },
+        });
+        setUsers(res.data);
+    };
+
+    const deleteData = async (el) => {
+        await axios.delete(`http://localhost:3001/users/${el.id}`);
+        getData(page);
+    };
+
+    useEffect(() => {
+        getData(page);
+    }, [page, sort, filter]);
+
     return (
-        <form onSubmit={handleSubmit}>
-            <input
-                type="text"
-                name="username"
-                placeholder="username"
-                onChange={handleChange}
-            />
-            <br />
-            <input
-                type="number"
-                name="age"
-                placeholder="age"
-                onChange={handleChange}
-            />
-            <br />
-            Married
-            <input type="checkbox" onChange={handleChange} name="isMarried" />
-            <br />
-            <select name="country" onChange={handleChange}>
-                <option value=""></option>
-                <option value="India">India</option>
-                <option value="UK">UK</option>
-                <option value="USA">USA</option>
-            </select>
-            <br />
-            <input
-                ref={uploadRef}
-                onChange={handleChange}
-                type="file"
-                name="pancard"
-            />
-            <br />
-            <input type="submit" />
-        </form>
+        <div>
+            <div>
+                <button
+                    className="formButton"
+                    onClick={() => setShowForm(!showForm)}
+                >
+                    {showForm ? "Hide Form" : "Show Form"}
+                </button>
+            </div>
+            {showForm ? (
+                <div>
+                    <Input
+                        handleChange={handleChange}
+                        handleSubmit={postData}
+                    ></Input>
+                </div>
+            ) : (
+                ""
+            )}
+
+            <div>
+                <button
+                    onClick={() => {
+                        setSort("lowToHigh");
+                    }}
+                >
+                    Low to High
+                </button>
+                <button
+                    onClick={() => {
+                        setSort("highToLow");
+                    }}
+                >
+                    High to Low
+                </button>
+                <button
+                    onClick={() => {
+                        setSort(null);
+                    }}
+                >
+                    Relevance
+                </button>
+            </div>
+            <div>
+                Filter:
+                <button
+                    onClick={() => {
+                        setFilter("ec");
+                    }}
+                >
+                    EC
+                </button>
+                <button
+                    onClick={() => {
+                        setFilter("cs");
+                    }}
+                >
+                    CS
+                </button>
+                <button
+                    onClick={() => {
+                        setFilter("mech");
+                    }}
+                >
+                    Mech
+                </button>
+                <button
+                    onClick={() => {
+                        setFilter(null);
+                    }}
+                >
+                    All
+                </button>
+            </div>
+
+            <div>
+                <Table users={users} deleteData={deleteData}></Table>
+            </div>
+            <div>
+                <button onClick={() => setPage(page - 1)}>Prev Page</button>
+                <button onClick={() => setPage(page + 1)}>Next Page</button>
+            </div>
+        </div>
     );
 }
