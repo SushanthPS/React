@@ -118,6 +118,7 @@ export default function Form({ form, setForm, arr, setArr }) {
                                 type="number"
                                 placeholder="Rating"
                                 name="rating"
+                                step=".01"
                             />
                         </div>
                         <div>
