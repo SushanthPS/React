@@ -50,3 +50,23 @@ td {
     border: 1px solid black;
     font-size: 17px;
 }
+
+tr:nth-of-type(even) {
+    background-color: gainsboro;
+}
+
+.pageDiv {
+    display: inline-block;
+    background-color: whitesmoke;
+    font-size: 20px;
+    padding: 10px;
+    margin-top: 40px;
+}
+
+.mainDiv {
+    margin-bottom: 50px;
+}
+
+.marginTop {
+    margin-top: 40px;
+}

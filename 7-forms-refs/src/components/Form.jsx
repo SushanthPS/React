@@ -48,7 +48,7 @@ export default function Form() {
     }, [page, sort, filter]);
 
     return (
-        <div>
+        <div className="mainDiv">
             <div>
                 <button
                     className="formButton"
@@ -68,7 +68,7 @@ export default function Form() {
                 ""
             )}
 
-            <div>
+            <div className="marginTop">
                 <button
                     onClick={() => {
                         setSort("lowToHigh");
@@ -122,12 +122,15 @@ export default function Form() {
                     All
                 </button>
             </div>
+            <div className="pageDiv">Page Number: {page}</div>
 
             <div>
                 <Table users={users} deleteData={deleteData}></Table>
             </div>
             <div>
-                <button onClick={() => setPage(page - 1)}>Prev Page</button>
+                <button disabled={page === 1} onClick={() => setPage(page - 1)}>
+                    Prev Page
+                </button>
                 <button onClick={() => setPage(page + 1)}>Next Page</button>
             </div>
         </div>
