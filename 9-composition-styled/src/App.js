@@ -1,52 +1,37 @@
 import "./App.css";
 import Navbar from "./components/Navbar";
-import NavbarItem from "./components/NavbarItem";
-import styled from "styled-components";
-import { useState } from "react";
+import Navbar1 from "./components/Navbar1";
+import Navbar2 from "./components/Navbar2";
+import CreditCard from "./components/CreditCard";
 
-const Button = styled.button`
-    border: 1px solid coral;
-    background: ${(props) => (props.theme === "light" ? "red" : "blue")};
-    border-radius: 5px;
-    height: 60px;
-    width: 120px;
-    margin-top: 20px;
-    font-size: 19px;
-    color: ${(props) => (props.theme === "light" ? "white" : "black")};
-`;
+const option = 4;
 
 function App() {
-    const [theme, setTheme] = useState("light");
-    return (
-        <div className="App">
-            <Navbar>
-                <div
-                    className="left"
-                    style={{
-                        fontSize: "25px",
-                        color: "white",
-                        padding: "7px",
-                        fontWeight: "700",
-                        marginLeft: "20px",
-                    }}
-                >
-                    {" "}
-                    Masai School
-                </div>
-                <div className="right" style={{ display: "flex" }}>
-                    <NavbarItem label="About">About</NavbarItem>
-                    <NavbarItem label="Prices">Prices</NavbarItem>
-                    <NavbarItem label="Start Page">Start Page</NavbarItem>
-                </div>
-            </Navbar>
-            <Button
-                theme={theme}
-                onClick={() => setTheme(theme === "light" ? "dark" : "light")}
-            >
-                Change Color
-            </Button>
-        </div>
-    );
+    if (option === 1)
+        return (
+            <div className="App">
+                <Navbar></Navbar>
+            </div>
+        );
+    else if (option === 2) {
+        return (
+            <div className="App">
+                <Navbar1></Navbar1>
+            </div>
+        );
+    } else if (option === 3) {
+        return (
+            <div className="App">
+                <Navbar2></Navbar2>
+            </div>
+        );
+    } else if (option === 4) {
+        return (
+            <div className="App">
+                <CreditCard></CreditCard>
+            </div>
+        );
+    }
 }
 
 export default App;
