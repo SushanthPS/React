@@ -1,6 +1,5 @@
 import "./App.css";
-import Todos from "./components/Todos";
-import Form from "./components/Form";
+import Dashboard from "./components/Dashboard";
 
 const option = 1;
 
@@ -8,8 +7,7 @@ function App() {
     if (option === 1) {
         return (
             <div className="App">
-                {/* <Todos></Todos> */}
-                <Form></Form>
+                <Dashboard></Dashboard>
             </div>
         );
     }
