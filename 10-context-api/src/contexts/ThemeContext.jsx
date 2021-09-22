@@ -6,7 +6,7 @@ export const ThemeContext = createContext({
 });
 
 function Theme({ children }) {
-    const [toggle, setToggle] = useState(false);
+    const [toggle, setToggle] = useState(true);
     const changeTheme = () => {
         setToggle(!toggle);
     };

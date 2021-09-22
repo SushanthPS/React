@@ -1,15 +1,18 @@
 import { createContext, useState } from "react";
 
-export const AuthContext = createContext({ token: "", giveToken: () => {} });
+export const AuthContext = createContext({
+    isAuth: false,
+    toggleAuth: () => {},
+});
 
 export default function AuthContextProvider({ children }) {
-    const [token, setToken] = useState(false);
+    const [isAuth, setIsAuth] = useState(false);
 
-    const giveToken = () => {
-        setToken("youAreAnoob");
+    const toggleAuth = () => {
+        setIsAuth(!isAuth);
     };
     return (
-        <AuthContext.Provider value={{ token, giveToken }}>
+        <AuthContext.Provider value={{ isAuth, toggleAuth }}>
             {children}
         </AuthContext.Provider>
     );
