@@ -22,10 +22,7 @@ export default function Navbar() {
     return (
         <Nav>
             <Link to="/">Homepage</Link>
-            <Link to="/contact">Contact</Link>
-            <Link to="/users">Users</Link>
-            <Link to="/users/details">User Details</Link>
-            <Link to="/about">About</Link>
+            <Link to="/products">Products</Link>
         </Nav>
     );
 }

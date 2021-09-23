@@ -1,3 +1,35 @@
 .App {
     text-align: center;
 }
+
+td {
+    border: 1px solid black;
+    padding: 20px 20px 20px 20px;
+    font-size: 20px;
+    width: 100px;
+}
+
+th {
+    font-size: 22px;
+}
+
+.main {
+    display: inline-flex;
+    flex-direction: column;
+    text-align: left;
+    margin: auto;
+    margin-top: 50px;
+}
+
+.main > div:nth-of-type(2) > h1 > span {
+    margin-left: 17px;
+}
+
+span {
+    color: black;
+    font-size: 25px;
+}
+
+.main > div > h1 {
+    color: red;
+}
