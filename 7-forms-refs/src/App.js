@@ -2,7 +2,7 @@ import "./App.css";
 import Counter from "./components/Counter";
 import Form from "./components/Form";
 
-const option = 2;
+const option = 1;
 
 function App() {
     if (option === 1)
