@@ -1,11 +1,13 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {
-    addTodo,
     addTodoError,
     addTodoLoading,
     addTodoSuccess,
-} from "../redux/actions";
+    getTodoError,
+    getTodoLoading,
+    getTodoSuccess,
+} from "../redux/actions.js";
 import axios from "axios";
 
 export default function Todos() {
@@ -16,17 +18,30 @@ export default function Todos() {
     const handleAddTodo = async () => {
         try {
             dispatch(addTodoLoading());
-            const res = await axios.post("http://localhost:3001/todos", {
+            await axios.post("http://localhost:3001/todos", {
                 status: false,
                 title: text,
             });
             dispatch(addTodoSuccess());
+            getTodos();
         } catch (e) {
             dispatch(addTodoError(e.message));
         }
-
-        dispatch(addTodo(text));
     };
+
+    const getTodos = async () => {
+        try {
+            dispatch(getTodoLoading());
+            const res = await axios.get("http://localhost:3001/todos");
+            dispatch(getTodoSuccess(res.data));
+        } catch (e) {
+            dispatch(getTodoError(e.message));
+        }
+    };
+
+    useEffect(() => {
+        getTodos();
+    }, []);
 
     return isLoading ? (
         <div> Loading...</div>

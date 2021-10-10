@@ -1,10 +1,12 @@
 import {
     ADD_COUNT,
     SUB_COUNT,
-    ADD_TODO,
     ADD_TODO_SUCCESS,
     ADD_TODO_ERROR,
     ADD_TODO_LOADING,
+    GET_TODO_SUCCESS,
+    GET_TODO_LOADING,
+    GET_TODO_ERROR,
 } from "./actionTypes.js";
 
 const initialState = {
@@ -27,14 +29,6 @@ export const reducer = (state = initialState, { type, payload }) => {
             return {
                 ...state,
                 counter: state.counter - payload,
-            };
-        case ADD_TODO:
-            return {
-                ...state,
-                todos: {
-                    ...state.todos,
-                    data: [...state.todos.data, payload],
-                },
             };
 
         case ADD_TODO_LOADING:
@@ -62,6 +56,35 @@ export const reducer = (state = initialState, { type, payload }) => {
                     ...state.todos,
                     isLoading: false,
                     isError: true,
+                },
+            };
+
+        case GET_TODO_SUCCESS:
+            return {
+                ...state,
+                todos: {
+                    ...state.todos,
+                    isLoading: false,
+                    data: [...payload],
+                },
+            };
+
+        case GET_TODO_LOADING:
+            return {
+                ...state,
+                todos: {
+                    ...state.todos,
+                    isLoading: true,
+                },
+            };
+
+        case GET_TODO_ERROR:
+            return {
+                ...state,
+                todos: {
+                    ...state.todos,
+                    isError: true,
+                    isLoading: false,
                 },
             };
 
