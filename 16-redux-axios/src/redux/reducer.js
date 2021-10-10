@@ -7,7 +7,16 @@ import {
     ADD_TODO_LOADING,
 } from "./actionTypes.js";
 
-export const reducer = (state, { type, payload }) => {
+const initialState = {
+    counter: 0,
+    todos: {
+        isLoading: false,
+        isError: false,
+        data: [],
+    },
+};
+
+export const reducer = (state = initialState, { type, payload }) => {
     switch (type) {
         case ADD_COUNT:
             return {
@@ -22,8 +31,21 @@ export const reducer = (state, { type, payload }) => {
         case ADD_TODO:
             return {
                 ...state,
-                todos: [...state.todos, { ...payload }],
+                todos: {
+                    ...state.todos,
+                    data: [...state.todos.data, payload],
+                },
             };
+
+        case ADD_TODO_LOADING:
+            return {
+                ...state,
+                todos: {
+                    ...state.todos,
+                    isLoading: true,
+                },
+            };
+
         case ADD_TODO_SUCCESS:
             return {
                 ...state,
@@ -43,14 +65,6 @@ export const reducer = (state, { type, payload }) => {
                 },
             };
 
-        case ADD_TODO_LOADING:
-            return {
-                ...state,
-                todos: {
-                    ...state.todos,
-                    isLoading: true,
-                },
-            };
         default:
             return state;
     }
