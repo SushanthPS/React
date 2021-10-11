@@ -9,6 +9,8 @@ import {
     GET_TODO_SUCCESS,
 } from "./actionTypes.js";
 
+import axios from "axios";
+
 //COUNTER
 export const addCount = (data) => ({ type: ADD_COUNT, payload: data });
 
@@ -52,4 +54,14 @@ export const getTodoSuccess = (data) => {
         type: GET_TODO_SUCCESS,
         payload: data,
     };
+};
+
+export const getTodoAction = () => async (dispatch) => {
+    try {
+        dispatch(getTodoLoading());
+        const res = await axios.get("http://localhost:3001/todos");
+        dispatch(getTodoSuccess(res.data));
+    } catch (e) {
+        dispatch(getTodoError(e.message));
+    }
 };

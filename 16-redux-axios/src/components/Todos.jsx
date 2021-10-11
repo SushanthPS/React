@@ -4,9 +4,10 @@ import {
     addTodoError,
     addTodoLoading,
     addTodoSuccess,
-    getTodoError,
-    getTodoLoading,
-    getTodoSuccess,
+    // getTodoError,
+    // getTodoLoading,
+    // getTodoSuccess,
+    getTodoAction,
 } from "../redux/Todos/actions";
 import axios from "axios";
 
@@ -32,13 +33,14 @@ export default function Todos() {
     };
 
     const getTodos = async () => {
-        try {
-            dispatch(getTodoLoading());
-            const res = await axios.get("http://localhost:3001/todos");
-            dispatch(getTodoSuccess(res.data));
-        } catch (e) {
-            dispatch(getTodoError(e.message));
-        }
+        dispatch(getTodoAction());
+        // try {
+        //     dispatch(getTodoLoading());
+        //     const res = await axios.get("http://localhost:3001/todos");
+        //     dispatch(getTodoSuccess(res.data));
+        // } catch (e) {
+        //     dispatch(getTodoError(e.message));
+        // }
     };
 
     useEffect(() => {
