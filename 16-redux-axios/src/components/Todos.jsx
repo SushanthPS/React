@@ -7,11 +7,13 @@ import {
     getTodoError,
     getTodoLoading,
     getTodoSuccess,
-} from "../redux/actions.js";
+} from "../redux/Todos/actions";
 import axios from "axios";
 
 export default function Todos() {
-    const { data, isLoading, isError } = useSelector((store) => store.todos);
+    const { data, isLoading, isError } = useSelector(
+        (store) => store.todos.todos
+    );
     const dispatch = useDispatch();
     const [text, setText] = useState("");
 

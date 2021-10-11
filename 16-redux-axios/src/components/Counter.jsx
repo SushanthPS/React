@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from "react-redux";
-import { addCount, subCount } from "../redux/actions";
+import { addCount, subCount } from "../redux/Todos/actions";
 import styled from "styled-components";
 
 const Cont = styled.div`
@@ -14,7 +14,7 @@ const Cont = styled.div`
 `;
 
 export default function Counter() {
-    const counter = useSelector((store) => store.counter);
+    const counter = useSelector((store) => store.todos.counter);
     const dispatch = useDispatch();
 
     return (

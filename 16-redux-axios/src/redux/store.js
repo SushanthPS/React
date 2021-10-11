@@ -1,4 +1,7 @@
-import { createStore } from "redux";
-import { reducer } from "./reducer.js";
+import { createStore, combineReducers } from "redux";
+import { todosReducer } from "./Todos/reducer";
+import { authReducer } from "./Auth/reducer";
 
-export const store = createStore(reducer);
+const rootReducer = combineReducers({ todos: todosReducer, auth: authReducer });
+
+export const store = createStore(rootReducer);

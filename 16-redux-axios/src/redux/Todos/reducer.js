@@ -18,7 +18,7 @@ const initialState = {
     },
 };
 
-export const reducer = (state = initialState, { type, payload }) => {
+export const todosReducer = (state = initialState, { type, payload }) => {
     switch (type) {
         case ADD_COUNT:
             return {
