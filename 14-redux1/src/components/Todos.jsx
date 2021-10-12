@@ -6,7 +6,7 @@ export default function Todos() {
     const dispatch = useDispatch();
     console.log("Todo", todo);
     return (
-        <div>
+        <div style={{ marginTop: "50px" }}>
             <input type="text" placeholder="Enter todo" />
             <button
                 onClick={() => {

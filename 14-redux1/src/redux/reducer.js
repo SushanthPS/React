@@ -1,4 +1,10 @@
-import { ADD_COUNT, SUB_COUNT, ADD_TODO } from "./actionTypes.js";
+import {
+    ADD_COUNT,
+    SUB_COUNT,
+    ADD_TODO,
+    MUL_COUNT,
+    DIV_COUNT,
+} from "./actionTypes.js";
 
 export const reducer = (state, { type, payload }) => {
     switch (type) {
@@ -11,6 +17,16 @@ export const reducer = (state, { type, payload }) => {
             return {
                 ...state,
                 counter: state.counter - payload,
+            };
+        case MUL_COUNT:
+            return {
+                ...state,
+                counter: state.counter * payload,
+            };
+        case DIV_COUNT:
+            return {
+                ...state,
+                counter: state.counter / payload,
             };
         case ADD_TODO:
             return {
