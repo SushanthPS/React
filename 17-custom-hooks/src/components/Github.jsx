@@ -28,7 +28,7 @@ function useFetch(url) {
 
 export default function Github() {
     const { loading, error, data } = useFetch(
-        "https://api.github.com/search/users?q=masai&per_page=10"
+        "https://api.github.com/search/users?q=sushanth&per_page=10"
     );
 
     return loading ? (

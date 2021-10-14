@@ -4,3 +4,5 @@ export const MUL_COUNT = "MUL_COUNT";
 export const DIV_COUNT = "DIV_COUNT";
 
 export const ADD_TODO = "ADD_TODO";
+export const TOGGLE_TODO = "TOGGLE_TODO";
+export const DELETE_TODO = "DELETE_TODO";

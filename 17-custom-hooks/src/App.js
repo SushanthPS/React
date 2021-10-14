@@ -4,7 +4,7 @@ import Timer from "./components/Timer";
 import Github from "./components/Github";
 import Counter from "./components/Counter";
 
-const option = 1;
+const option = 3;
 
 function App() {
     const [hide, setHide] = useState(true);
