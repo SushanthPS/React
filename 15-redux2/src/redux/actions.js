@@ -5,6 +5,8 @@ import {
     GET_TODO_LOADING,
     GET_TODO_SUCCESS,
     GET_TODO_ERROR,
+    CHANGE_TOTAL,
+    CHANGE_INCOMPLETE,
 } from "./actionTypes.js";
 
 export const addTodoLoading = () => ({
@@ -30,4 +32,14 @@ export const getTodoSuccess = (data) => ({
 
 export const getTodoError = () => ({
     type: GET_TODO_ERROR,
+});
+
+export const changeTotal = (data) => ({
+    type: CHANGE_TOTAL,
+    payload: data,
+});
+
+export const changeIncomplete = (data) => ({
+    type: CHANGE_INCOMPLETE,
+    payload: data,
 });

@@ -4,6 +4,8 @@ import {
     addTodoError,
     addTodoLoading,
     addTodoSuccess,
+    changeIncomplete,
+    changeTotal,
     getTodoError,
     getTodoLoading,
     getTodoSuccess,
@@ -81,7 +83,10 @@ const Container = styled.div`
 `;
 
 export default function Todos() {
-    const { isLoading, isError, todos } = useSelector((store) => store);
+    const { isLoading, isError, todos, total, incomplete } = useSelector(
+        (store) => store
+    );
+
     const dispatch = useDispatch();
     const [text, setText] = useState("");
 
@@ -104,6 +109,8 @@ export default function Todos() {
         try {
             const res = await axios.get("http://localhost:3001/todos");
             dispatch(getTodoSuccess(res.data));
+            dispatch(changeTotal());
+            dispatch(changeIncomplete());
         } catch (error) {
             dispatch(getTodoError());
             console.log(error.message);
@@ -112,6 +119,9 @@ export default function Todos() {
 
     useEffect(() => {
         getTodos();
+        dispatch(changeTotal(todos.length));
+        const data = todos.filter((el) => el.status === false);
+        console.log(data);
     }, []);
 
     return isLoading ? (
@@ -120,6 +130,8 @@ export default function Todos() {
         <h1>Error Occured</h1>
     ) : (
         <Container>
+            <h2>Total: {total}</h2>
+            <h2>Incomplete: {incomplete} </h2>
             <h1>TODO APP</h1>
             <div style={{ marginTop: "50px" }}>
                 <input
@@ -133,8 +145,8 @@ export default function Todos() {
             <div>
                 {todos.map((el) => {
                     return (
-                        <Link to={`/todo/${el.id}`}>
-                            <div className="todo-item" key={el.id}>
+                        <Link to={`/todo/${el.id}`} key={el.id}>
+                            <div className="todo-item">
                                 <span className="title">{el.title}</span> -{" "}
                                 {el.status ? (
                                     <span className="complete">Complete</span>
