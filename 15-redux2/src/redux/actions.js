@@ -1,10 +1,18 @@
-import { SUB_COUNT, ADD_COUNT, ADD_TODO } from "./actionTypes.js";
+import { ADD_TODO, TOGGLE_TODO, DELETE_TODO } from "./actionTypes.js";
 
-export const addCount = (data) => ({ type: ADD_COUNT, payload: data });
-
-export const subCount = (data) => ({ type: SUB_COUNT, payload: data });
+import { v4 as uuid } from "uuid";
 
 export const addTodo = (data) => ({
     type: ADD_TODO,
-    payload: { status: false, title: data },
+    payload: { status: false, title: data, id: uuid() },
+});
+
+export const toggleTodo = (data) => ({
+    type: TOGGLE_TODO,
+    payload: data,
+});
+
+export const deleteTodo = (data) => ({
+    type: DELETE_TODO,
+    payload: data,
 });
