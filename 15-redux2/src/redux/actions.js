@@ -1,18 +1,33 @@
-import { ADD_TODO, TOGGLE_TODO, DELETE_TODO } from "./actionTypes.js";
+import {
+    ADD_TODO_LOADING,
+    ADD_TODO_SUCCESS,
+    ADD_TODO_ERROR,
+    GET_TODO_LOADING,
+    GET_TODO_SUCCESS,
+    GET_TODO_ERROR,
+} from "./actionTypes.js";
 
-import { v4 as uuid } from "uuid";
-
-export const addTodo = (data) => ({
-    type: ADD_TODO,
-    payload: { status: false, title: data, id: uuid() },
+export const addTodoLoading = () => ({
+    type: ADD_TODO_LOADING,
 });
 
-export const toggleTodo = (data) => ({
-    type: TOGGLE_TODO,
+export const addTodoSuccess = () => ({
+    type: ADD_TODO_SUCCESS,
+});
+
+export const addTodoError = () => ({
+    type: ADD_TODO_ERROR,
+});
+
+export const getTodoLoading = () => ({
+    type: GET_TODO_LOADING,
+});
+
+export const getTodoSuccess = (data) => ({
+    type: GET_TODO_SUCCESS,
     payload: data,
 });
 
-export const deleteTodo = (data) => ({
-    type: DELETE_TODO,
-    payload: data,
+export const getTodoError = () => ({
+    type: GET_TODO_ERROR,
 });

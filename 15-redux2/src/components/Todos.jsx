@@ -1,12 +1,25 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { addTodo } from "../redux/actions";
+import {
+    addTodoError,
+    addTodoLoading,
+    addTodoSuccess,
+    getTodoError,
+    getTodoLoading,
+    getTodoSuccess,
+} from "../redux/actions";
 import styled from "styled-components";
-import TodoItem from "./TodoItem";
+import axios from "axios";
+import { Link } from "react-router-dom";
 
 const Container = styled.div`
     h1 {
         color: goldenrod;
+    }
+
+    a {
+        color: inherit;
+        text-decoration: inherit;
     }
 
     input {
@@ -68,13 +81,44 @@ const Container = styled.div`
 `;
 
 export default function Todos() {
-    const todo = useSelector((store) => store.todos);
+    const { isLoading, isError, todos } = useSelector((store) => store);
     const dispatch = useDispatch();
     const [text, setText] = useState("");
-    const [edit, showEdit] = useState(false);
-    const [item, setItem] = useState("");
 
-    return (
+    const handleAddTodo = async () => {
+        dispatch(addTodoLoading());
+        try {
+            const data = { status: false, title: text };
+            await axios.post("http://localhost:3001/todos", data);
+            dispatch(addTodoSuccess());
+            getTodos();
+            setText("");
+        } catch (err) {
+            dispatch(addTodoError());
+            console.log(err.message);
+        }
+    };
+
+    const getTodos = async () => {
+        dispatch(getTodoLoading());
+        try {
+            const res = await axios.get("http://localhost:3001/todos");
+            dispatch(getTodoSuccess(res.data));
+        } catch (error) {
+            dispatch(getTodoError());
+            console.log(error.message);
+        }
+    };
+
+    useEffect(() => {
+        getTodos();
+    }, []);
+
+    return isLoading ? (
+        <h1>Loading...</h1>
+    ) : isError ? (
+        <h1>Error Occured</h1>
+    ) : (
         <Container>
             <h1>TODO APP</h1>
             <div style={{ marginTop: "50px" }}>
@@ -84,41 +128,31 @@ export default function Todos() {
                     onChange={(e) => setText(e.target.value)}
                     value={text}
                 />
-                <button
-                    onClick={() => {
-                        dispatch(addTodo(text));
-                        setText("");
-                    }}
-                >
-                    Add todo
-                </button>
+                <button onClick={handleAddTodo}>Add todo</button>
             </div>
             <div>
-                {todo.map((el) => {
+                {todos.map((el) => {
                     return (
-                        <div className="todo-item" key={el.id}>
-                            <span className="title">{el.title}</span> -{" "}
-                            {el.status ? (
-                                <span className="complete">Complete</span>
-                            ) : (
-                                <span className="incomplete">Incomplete</span>
-                            )}
-                            <span>
-                                <button
-                                    className="edit"
-                                    onClick={() => {
-                                        showEdit(!edit);
-                                        setItem(el);
-                                    }}
-                                >
-                                    Edit
-                                </button>
-                            </span>
-                        </div>
+                        <Link to={`/todo/${el.id}`}>
+                            <div className="todo-item" key={el.id}>
+                                <span className="title">{el.title}</span> -{" "}
+                                {el.status ? (
+                                    <span className="complete">Complete</span>
+                                ) : (
+                                    <span className="incomplete">
+                                        Incomplete
+                                    </span>
+                                )}
+                                <span>
+                                    <Link to={`/todo/${el.id}/edit`}>
+                                        <button className="edit">Edit</button>
+                                    </Link>
+                                </span>
+                            </div>
+                        </Link>
                     );
                 })}
             </div>
-            {edit ? <TodoItem el={item} showEdit={showEdit} /> : ""}
         </Container>
     );
 }
