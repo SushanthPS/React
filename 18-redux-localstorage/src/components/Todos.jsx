@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { addTodo } from "../redux/actions";
 import styled from "styled-components";
 import TodoItem from "./TodoItem";
+import { addTodo } from "../redux/Todos/actions.js";
 
 const Container = styled.div`
     h1 {

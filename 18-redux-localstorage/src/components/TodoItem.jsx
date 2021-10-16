@@ -1,6 +1,6 @@
 import { useDispatch } from "react-redux";
 import styled from "styled-components";
-import { deleteTodo, toggleTodo } from "../redux/actions";
+import { deleteTodo, toggleTodo } from "../redux/Todos/actions";
 
 const Container = styled.div`
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;

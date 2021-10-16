@@ -1,11 +1,11 @@
 import { ADD_TODO, TOGGLE_TODO, DELETE_TODO } from "./actionTypes.js";
-import { loadData, saveData } from "../utils/localStorage";
+import { loadData, saveData } from "../../utils/localStorage";
 
 const initialState = {
     todos: loadData("todos") || [],
 };
 
-export const reducer = (state = initialState, { type, payload }) => {
+export const TodoReducer = (state = initialState, { type, payload }) => {
     switch (type) {
         case ADD_TODO:
             const updatedData = [...state.todos, { ...payload }];
