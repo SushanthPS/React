@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import styled from "styled-components";
 import TodoItem from "./TodoItem";
 import { addTodo } from "../redux/Todos/actions.js";
+import { Redirect } from "react-router-dom";
 
 const Container = styled.div`
     h1 {
@@ -68,11 +69,15 @@ const Container = styled.div`
 `;
 
 export default function Todos() {
-    const todo = useSelector((store) => store.todos);
+    const isAuth = useSelector((store) => store.auth.isAuth);
+
+    const todo = useSelector((store) => store.app.todos);
     const dispatch = useDispatch();
     const [text, setText] = useState("");
     const [edit, showEdit] = useState(false);
     const [item, setItem] = useState("");
+
+    if (!isAuth) return <Redirect to="/login" />;
 
     return (
         <Container>
