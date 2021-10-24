@@ -44,7 +44,13 @@ export default function Routes() {
             <Links className="links">
                 <Link to="/">Home</Link>
                 <Link to="/login">Login</Link>
-                <button onClick={handleLogout}>Logout</button>
+                <button
+                    onClick={() => {
+                        handleLogout();
+                    }}
+                >
+                    Logout
+                </button>
             </Links>
             <Switch>
                 <Route path="/" exact>
